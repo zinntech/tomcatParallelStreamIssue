@@ -25,6 +25,9 @@
     </dependencies>
 
     <build>
+        <directory>${project.basedir}/../target</directory>
+        <finalName>test</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
