@@ -27,6 +27,8 @@ public final class MyServlet extends HttpServlet
         {
             answerBuilder.append(".stream() Looked up ")
                     .append(lookupEnvironmentValue())
+                    .append(" on thread ")
+                    .append(Thread.currentThread().getName())
                     .append("<br/>");
         });
 
@@ -36,7 +38,10 @@ public final class MyServlet extends HttpServlet
             synchronized (MyServlet.class)
             {
                 answerBuilder.append(".parallelStream() Looked up ")
+                        .append(" on thread ")
                         .append(lookupEnvironmentValue())
+                        .append(" on thread ")
+                        .append(Thread.currentThread().getName())
                         .append("<br/>");
             }
         });
